@@ -17,7 +17,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware(['auth','admin'])->group(function () {
+Route::middleware(['auth', 'admin'])->group(function () {
     /*
      * Op alle routes uit deze groep wil ik de middleware toepassen.
      * Welke middleware? > auth en admin (zelf gemaakt).
@@ -26,6 +26,12 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::get('/admin', function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
+
+    //Routes voor gebruiksbeheer
+    Route::get('admin/users', [\App\Http\Controllers\admin\UserController::class, 'index'])->name('admin.users.index');
+    //Als er naar admin/users wordt genavigeerd (deze route wordt geactiveerd als iemand er op klikt),
+    //gebruik dan de UserController met functie index.
+
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
