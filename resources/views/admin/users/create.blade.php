@@ -21,8 +21,9 @@
     <label for="wachtwoord">Wachtwoord: </label>
     <input type="password" id="wachtwoord" name="password"><br>
 
-    <label for="admin">Wil je van de gebruiker een Admin maken? </label>
-    <input type="checkbox" id="admin" name="is_admin" value="1"><br> // Belangrijk om hier een waarde mee te geven (gaf fout in test: "on")
+    <label for="admin">Wil je van de gebruiker een admin. maken? </label>
+    <input type="checkbox" id="admin" name="is_admin" value="1"><br>
+    {{--Belangrijk om hier een waarde mee te geven (gaf fout in test: "on")--}}
 
     <button type="submit">Nieuwe gebruiker aanmaken</button>
 

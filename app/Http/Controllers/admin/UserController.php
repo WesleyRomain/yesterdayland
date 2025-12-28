@@ -52,4 +52,26 @@ class UserController extends Controller
 
        return redirect()->route('admin.users.index')->with('success', 'Je gebruiker is aangemaakt');
    }
+   /*
+    * Functie edit van de UserController zal direct de view teruggeven van het bewerkingsformulier
+    */
+   public function edit(User $user){
+       return view('admin.users.edit', compact('user'));
+   }
+
+   public function update(Request $request, User $user){
+       $request->validate([
+           'name' => 'required',
+           'email' => 'required|email',
+           'is_admin' => 'nullable|boolean',
+       ]);
+
+       $user->update([
+           'name'=>$request->name,
+           'email'=>$request->email,
+           'is_admin'=>$request->boolean('is_admin'),
+       ]);
+
+       return redirect()->route('admin.users.index')->with('success', 'Je gebruiker is aangepast');
+   }
 }

@@ -10,6 +10,7 @@
 <ul>
 @foreach($users as $user)
     <li>{{$user->name}} ({{$user->email}})
+        <a href="{{route('admin.users.edit', $user)}}">Bewerken</a>
         <form action="{{route('admin.users.destroy', $user)}}" method="POST">
             @csrf {{--Beveiliging met unieke token--}}
             @method('DELETE') {{--Methode = delete--}}
@@ -20,6 +21,7 @@
 </ul>
 
 <a href="{{route('admin.users.create')}}">Nieuwe gebruiker aanmaken</a>
+
 {{--
 Link voor aanmaken nieuwe gebruiker.
 Verwijst direct door naar de route admin.users.create.
