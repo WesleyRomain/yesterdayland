@@ -32,6 +32,10 @@ Route::middleware(['auth', 'admin'])->group(function () {
     //Als er naar admin/users wordt genavigeerd (deze route wordt geactiveerd als iemand er op klikt),
     //gebruik dan de UserController met functie index.
 
+    Route::delete('admin/users/{user}', [\App\Http\Controllers\admin\UserController::class, 'destroy'])->name('admin.users.destroy');
+    //Bij aanklikken verwijderbutton, navigeer naar route admin.users.destroy,
+    //route spreekt UserController aan en voert destroy-functie uit.
+
 });
 
 require __DIR__ . '/auth.php';
