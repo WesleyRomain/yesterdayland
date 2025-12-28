@@ -17,4 +17,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::middleware(['auth','admin'])->group(function () {
+    /*
+     * Op alle routes uit deze groep wil ik de middleware toepassen.
+     * Welke middleware? > auth en admin (zelf gemaakt).
+     * Wat is mijn groep waarop ik de middleware wil toepassen? > /admin
+     */
+    Route::get('/admin', function () {
+        return view('admin.dashboard');
+    })->name('admin.dashboard');
+});
+
 require __DIR__.'/auth.php';
