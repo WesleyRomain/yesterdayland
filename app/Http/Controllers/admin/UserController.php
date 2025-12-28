@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Http\Request;
+use function Laravel\Prompts\password;
 
 class UserController extends Controller
 {
@@ -24,5 +26,30 @@ class UserController extends Controller
        //Voorlopig laatst toegevoegde verwijderen
 
        return back()->with('success', 'Je gebruiker is verwijderd');
+   }
+
+   public function create(){
+       return view('admin.users.create'); // Doorgestuurd naar form.
+   }
+
+   // 1. Store-functie ontvangt request van post formulier.
+   public function store(Request $request){
+       $request->validate([ // 2. Ik valideer eerst de gegevens.
+           'name' => 'required',
+           'email' => 'required|email|unique:users',
+           'password' => 'required|min:8|',
+           'is_admin' => 'nullable|boolean',
+       ]);
+
+       User::create([ // 3. Als de gegevens zijn gevalideerd, dan maken we een nieuwe user aan.
+           'name' => $request->name,
+           'email' => $request->email,
+           'password' => bcrypt($request->password),
+           'is_admin' => $request->boolean('is_admin'),
+       ]);
+
+       // 4. De admin wordt teruggestuurd naar zijn dashboard en krijgt een 'succes' boodschap te zien (al gedefinieerd in index)
+
+       return redirect()->route('admin.users.index')->with('success', 'Je gebruiker is aangemaakt');
    }
 }

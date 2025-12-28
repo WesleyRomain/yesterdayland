@@ -36,6 +36,10 @@ Route::middleware(['auth', 'admin'])->group(function () {
     //Bij aanklikken verwijderbutton, navigeer naar route admin.users.destroy,
     //route spreekt UserController aan en voert destroy-functie uit.
 
+    Route::get('admin/users/create', [\App\Http\Controllers\admin\UserController::class, 'create'])->name('admin.users.create');
+    //Bij aanklikken link in view zal admin doorgestuurd worden naar de create form.
+    Route::post('admin/users', [\App\Http\Controllers\admin\UserController::class, 'store'])->name('admin.users.store');
+
 });
 
 require __DIR__ . '/auth.php';
