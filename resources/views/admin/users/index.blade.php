@@ -10,12 +10,13 @@
 <ul>
 @foreach($users as $user)
     <li>{{$user->name}} ({{$user->email}})</li>
+        <form action="{{route('admin.users.destroy', $user)}}" method="POST">
+            @csrf {{--Beveiliging met unieke token--}}
+            @method('DELETE') {{--Methode = delete--}}
+            <button type="submit">verwijderen</button> {{--In loop gezet zodat alle gebruikers verwijderd kunnen worden en niet enkel de laatste.--}}
+        </form>
 @endforeach
 
 </ul>
 
-<form action="{{route('admin.users.destroy', $user)}}" method="POST">
-    @csrf {{--Beveiliging met unieke token--}}
-    @method('DELETE')
-    <button type="submit">verwijderen</button>
-</form>
+
