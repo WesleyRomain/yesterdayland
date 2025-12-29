@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -11,9 +12,12 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
-    /**
-     * Display the user's profile form.
-     */
+    //Toont publieke profielpagina.
+    public function show(User $user){
+        return view('profile.show', compact('user'));
+    }
+
+    //Geeft het formulier om de profielpagina te bewerken.
     public function edit(Request $request): View
     {
         return view('profile.edit', [
@@ -24,37 +28,32 @@ class ProfileController extends Controller
     /**
      * Update the user's profile information.
      */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
+    public function update(Request $request): RedirectResponse
     {
-        $request->user()->fill($request->validated());
+        $request->validate([ //Verifieer de doorgestuurde velden van $request.
+            'username' => 'nullable|string|max:255',
+            'birthday' => 'nullable|date',
+            'about_me' => 'nullable|string',
+            'profile_picture' => 'nullable|image|max:2048',
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
-        }
-
-        $request->user()->save();
-
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
-    }
-
-    /**
-     * Delete the user's account.
-     */
-    public function destroy(Request $request): RedirectResponse
-    {
-        $request->validateWithBag('userDeletion', [
-            'password' => ['required', 'current_password'],
         ]);
 
-        $user = $request->user();
+        $user= $request->user(); //Ophalen van de ingelogde gebruiker.
 
-        Auth::logout();
+        $user->username=$request->username; //Nieuwe waarden in user-model steken.
+        $user->birthday=$request->birthday;
+        $user->about_me=$request->about_me;
 
-        $user->delete();
+        //Eventuele profielfoto toevoegen.
+        if($request->hasFile('profile_picture')){
+            $path=$request->file('profile_picture')->store('profile_pictures','public');
+            $user->profile_picture=$path;
+        }
 
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
+        $user->save(); //Gebruiker opslaan in de database.
 
-        return Redirect::to('/');
+        //Terugsturen naar de profielpagina die gegevens toont.
+        return Redirect::route('profile.show', $user)->with('success', 'Your profile has been updated.');
     }
+    //Destroy + route verwijderd, niet nodig (gebruiker kan enkel "aanpassen").
 }
