@@ -35,8 +35,8 @@ class AuthenticatedSessionController extends Controller
         }
         // Als gebruiker een admin is, dan redirect direct naar admin.dashboard.
 
-        return redirect()->route('dashboard');
-        //anders gewoon naar het dashboard.
+        return redirect()->route('profile.show', $user);
+        // Anders gewoon naar het ingelogde profiel.
     }
 
     /**

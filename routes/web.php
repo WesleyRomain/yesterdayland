@@ -2,14 +2,11 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\User; // Gebruik van User-model.
 Route::get('/', function () {
-    return view('welcome');
+    $users = User::where('is_admin', false)->get(); // Gebruik het User-model en haal de lijst op van alle gebruikers die geen admin zijn.
+    return view('welcome', compact('users')); // Toon de "Welcome"-view en geef $users hieraan mee.
 });
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/profile/{user}', [ProfileController::class, 'show'])->name('profile.show');
 

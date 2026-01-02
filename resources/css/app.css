@@ -79,3 +79,30 @@ button{
     font-weight: bold;
     cursor: pointer;
 }
+
+.profile-grid{ /*Alle elementen die behoren tot de diverse klasse profile-grid = de profile items.*/
+    display: grid; /*Plaats deze elementen in een grid.*/
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /*Gebruik hiervoor een template: vul het aantal kolommen automatisch op, afhankelijk van de schermgrootte. Minimaal 140px breed, maximaal 1 fr (= verdeel ruimte tussen kolommen eerlijk indien ruimte over).*/
+    gap: 20px; /*=Ruimte tussen de items.*/
+    margin-top: 20px; /*Geef wat ruimte boven de items.*/
+
+}
+
+.profile-item{
+    text-align: center; /*Alles binnen een item wordt gecentreerd.*/
+}
+
+.profile-item img{
+    width: 100px; /*Foto is altijd 100x100.*/
+    height: 100px;
+    object-fit: cover; /*Zorgt ervoor dat de foto niet vervormt + juist bijgesneden.*/
+    border-radius: 50%; /*Foto rond maken.*/
+    display: block; /*Foto staat gecentreerd.*/
+    margin: 0 auto 10px; /*Zorgt voor ruimte tussen foto en naam*/
+}
+
+.profile-item p{
+    margin: 0;
+    font-weight: bold;
+    color: steelblue; /*Idem als h1 & h2*/
+}
