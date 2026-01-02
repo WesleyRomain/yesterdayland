@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Models\User; // Gebruik van User-model.
@@ -9,6 +10,8 @@ Route::get('/', function () {
 });
 
 Route::get('/profile/{user}', [ProfileController::class, 'show'])->name('profile.show');
+Route::get('/news', [NewsController::class, 'index'])->name('news.index'); // Lijst van alle nieuwtjes.
+Route::get('/news/{news}', [NewsController::class, 'show'])->name('news.show'); //Detailpagina van een newsitem
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -42,6 +45,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('admin/users/{user}/edit', [\App\Http\Controllers\admin\UserController::class, 'edit'])->name('admin.users.edit');
     //Route als formulier verzonden wordt: spreek UserController -> f('update') aan.
     Route::put('admin/users/{user}', [\App\Http\Controllers\admin\UserController::class, 'update'])->name('admin.users.update');
+
+    Route::resource('admin/news', NewsController::class)->except(['show']);
 
 });
 

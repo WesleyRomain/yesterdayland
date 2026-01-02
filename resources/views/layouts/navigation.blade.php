@@ -7,7 +7,7 @@
 
     @endauth
 
-    <a href="/news">Nieuws</a>
+    <a href=" {{route('news.index')}}">Nieuws</a>
     <a href="/faq">FAQ</a>
     <a href="/contact">Contact</a>
 

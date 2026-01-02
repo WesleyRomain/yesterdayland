@@ -8,23 +8,23 @@ body {
     background: #f5f5f5;
 }
 
-.navbar{
+.navbar {
     background: palevioletred;
     padding: 12px;
 }
 
-.navbar a{
+.navbar a {
     color:white;
     margin-right: 15px;
     text-decoration: none;
     font-weight: bold;
 }
 
-.navbar a:hover{
+.navbar a:hover {
     text-decoration: underline;
 }
 
-.content{
+.content {
     max-width: 900px;
     margin: 30px auto;
     background: white;
@@ -40,14 +40,14 @@ h1 {
     margin: 30px;
 }
 
-h2{
+h2 {
     font-weight:bold;
     font-size: medium;
     color: steelblue;
     margin: 30px;
 }
 
-p{
+p {
     margin:30px;
 }
 
@@ -57,20 +57,20 @@ form {
     gap: 8px;
 }
 
-label{
+label {
     font-weight: bold;
 }
 
 input[type="text"],
 input[type="date"],
 input[type="file"],
-textarea{
+textarea {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
 }
 
-button{
+button {
     padding: 10px;
     background: cornflowerblue;
     color: white;
@@ -80,7 +80,7 @@ button{
     cursor: pointer;
 }
 
-.profile-grid{ /*Alle elementen die behoren tot de diverse klasse profile-grid = de profile items.*/
+.profile-grid { /*Alle elementen die behoren tot de diverse klasse profile-grid = de profile items.*/
     display: grid; /*Plaats deze elementen in een grid.*/
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /*Gebruik hiervoor een template: vul het aantal kolommen automatisch op, afhankelijk van de schermgrootte. Minimaal 140px breed, maximaal 1 fr (= verdeel ruimte tussen kolommen eerlijk indien ruimte over).*/
     gap: 20px; /*=Ruimte tussen de items.*/
@@ -88,11 +88,11 @@ button{
 
 }
 
-.profile-item{
+.profile-item {
     text-align: center; /*Alles binnen een item wordt gecentreerd.*/
 }
 
-.profile-item img{
+.profile-item img {
     width: 100px; /*Foto is altijd 100x100.*/
     height: 100px;
     object-fit: cover; /*Zorgt ervoor dat de foto niet vervormt + juist bijgesneden.*/
@@ -101,8 +101,31 @@ button{
     margin: 0 auto 10px; /*Zorgt voor ruimte tussen foto en naam*/
 }
 
-.profile-item p{
+.profile-item p {
     margin: 0;
     font-weight: bold;
     color: steelblue; /*Idem als h1 & h2*/
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top:20px;
+}
+
+.news-item {
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.news-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
 }
