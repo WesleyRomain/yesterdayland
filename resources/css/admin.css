@@ -1,0 +1,129 @@
+/* Algemene stijl van de body */
+body {
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+}
+
+/* Navigatie */
+
+.admin-navbar { /* Container voor de items in nav-bar */
+    background: steelblue; /* Achtergrondkleur is staalblauw (consistent met voorgaande) */
+    color: white; /* Tekst is wit */
+    padding: 15px 25px; /* Spatie boven en onder */
+    display: flex; /* Gebruik maken van flexbox om items naast elkaar te plaatsen */
+    justify-content: space-between; /* Links en rechts worde uit elkaar-geduwd*/
+    align-items: center; /* Verticaal centreren van alle items in de navbar */
+}
+
+.admin-navbar a { /* Alle links in de navbar */
+    color: white; /* Tekst is wit */
+    text-decoration: none; /* Geen onderlijning van de links */
+    margin-right: 20px; /* Ruimte rechts van elke link */
+    font-weight: bold; /* Links hebben een bolde fond. */
+}
+
+.admin-navbar a:hover{
+    text-decoration: underline;
+}
+
+.admin-logo { /* Specifieke stijl voor het Admin Panel logo/link  */
+    font-size: 22px; /* Grotere tekst dan andere links */
+    margin-right: 40px; /* Extra ruimte rechts, zodat de andere links niet tegen het logo plakken*/
+}
+
+.admin-user { /* Tekst ingelogd als: ...*/
+    margin-right: 20px; /* Ruimte rechts voor logout knop */
+    font-style: italic; /* Schuingedrukt om visueel te onderscheiden */
+}
+
+.logout-link {
+    background: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+}
+
+.logout-link:hover {
+    text-decoration: underline;
+}
+
+/* Inhoud container */
+.admin-content {
+    max-width: 1000px;
+    margin: 30px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Algemene stijl voor knoppen */
+/* UNIFORME KNOP-STIJL VOOR ZOWEL <a> ALS <button> */
+.btn {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+}
+
+
+.btn-edit {
+    background: steelblue;
+    color: white;
+}
+
+.btn-edit:hover {
+    background: darkblue;
+}
+
+.btn-delete {
+    background: palevioletred;
+    color: white;
+}
+
+.btn-delete:hover {
+    background: darkred;
+}
+
+.btn-admin{
+    background: palegreen;
+    color: white;
+}
+
+.btn-admin:hover {
+    background: darkgreen;
+}
+
+/* Links in dashboard */
+
+.admin-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.admin-links a{
+    width: fit-content;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Zorg dat ALLE knoppen (ook <a>) dezelfde grootte krijgen */
+.btn {
+    display: inline-block;   /* maakt <a> knoppen even groot als <button> */
+    text-decoration: none;   /* geen onderlijning */
+}
+
+.user-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+

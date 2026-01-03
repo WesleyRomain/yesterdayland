@@ -1,27 +1,36 @@
-<h1>Gebruiksbeheer</h1>
+@extends('layouts.admin')
 
-@if(session('success'))
-    <div style="color:green;">{{session('success')}}</div>
-@endif
+@section('title', 'gebruiksbeheer')
 
-@if(session('error'))
-    <div style="color:red;">{{session('error')}}</div>
-@endif
-<ul>
-@foreach($users as $user)
-    <li>{{$user->name}} ({{$user->email}})
-        <a href="{{route('admin.users.edit', $user)}}">Bewerken</a>
-        <form action="{{route('admin.users.destroy', $user)}}" method="POST">
-            @csrf {{--Beveiliging met unieke token--}}
-            @method('DELETE') {{--Methode = delete--}}
-            <button type="submit">verwijderen</button> {{--In loop gezet zodat alle gebruikers verwijderd kunnen worden en niet enkel de laatste.--}}
-        </form>
-    </li>
-@endforeach
-</ul>
+@section('content')
+    <h1>Gebruiksbeheer</h1>
 
-<a href="{{route('admin.users.create')}}">Nieuwe gebruiker aanmaken</a>
+    @if(session('success'))
+        <div style="color:green;">{{session('success')}}</div>
+    @endif
 
+    @if(session('error'))
+        <div style="color:red;">{{session('error')}}</div>
+    @endif
+    <ul>
+        @foreach($users as $user)
+            <li>
+                {{$user->name}} ({{$user->email}})
+                <div class="user-actions">
+                    <a href="{{route('admin.users.edit', $user)}}" class="btn btn-edit">Bewerken</a>
+                    <form action="{{route('admin.users.destroy', $user)}}" method="POST">
+                        @csrf {{--Beveiliging met unieke token--}}
+                        @method('DELETE') {{--Methode = delete--}}
+                        <button type="submit" class="btn btn-delete">Verwijderen
+                        </button> {{--In loop gezet zodat alle gebruikers verwijderd kunnen worden en niet enkel de laatste.--}}
+                    </form>
+                </div>
+            </li>
+        @endforeach
+    </ul>
+
+    <a href="{{route('admin.users.create')}}" class="btn btn-admin">Nieuwe gebruiker aanmaken</a>
+@endsection
 {{--
 Link voor aanmaken nieuwe gebruiker.
 Verwijst direct door naar de route admin.users.create.
