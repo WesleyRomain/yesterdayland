@@ -3,7 +3,16 @@
 @section('title', 'Nieuws van Yesterdayland')
 
 @section('content')
-    <h1>Nieuws van yesterdayland</h1>
+    <h1>Nieuws van Yesterdayland</h1>
+
+    {{--Indien iemand admin is: voeg een link toe om een nieuw nieuwselement toe te voegen.--}}
+    @auth
+        @if(auth()->user()->is_admin)
+            <a href=" {{ route('admin.news.create') }}" class="btn-admin">
+                + Nieuw nieuwsitem aanmaken
+            </a>
+        @endif
+    @endauth
 
     <div class="news-grid"> {{--Nieuwe klasse news-grid aanmaken voor aparte CSS.--}}
         @foreach($news as $new)
@@ -30,8 +39,27 @@
                     Lees meer ->
                 </a>
 
-            </div>
+                @auth  {{--Als iemand admin is= voeg dan volgende knoppen toe. Niet apart nog een admin view maken = dubbel werk!--}}
+                    @if(auth()->user()->is_admin)
+                        <div class="admin-buttons">
+                            <a href=" {{ route('admin.news.edit', $new) }} " class="btn-edit">
+                                Bewerken
+                            </a>
 
+                            <form action=" {{ route('admin.news.destroy', $new) }} " method="POST"
+                                  style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+
+                                <button type="submit" class="btn-delete">
+                                    Verwijderen
+                                </button>
+
+                            </form>
+                        </div>
+                    @endif
+                @endauth
+            </div>
         @endforeach
     </div>
 @endsection

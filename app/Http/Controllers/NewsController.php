@@ -29,11 +29,19 @@ class NewsController extends Controller
      */
     public function store(Request $request) // Een nieuw nieuwsitem opslaan: eerst valideren of alle gegevens aanwezig zijn
     {
-        $validated= $request->validate([
+        $validated = $request->validate([
             'title' => 'required',
             'content' => 'required',
             'published_at' => 'required|date',
+            'image' => 'nullable|image|max:2048', // afbeelding valideren
         ]);
+
+        // Afbeelding opslaan.
+        if ($request->hasFile('image')) {
+            $validated['image'] = $request->file('image')->store('news', 'public');
+        }
+
+        $validated['user_id'] = auth()->id();
 
         News::create($validated); // Een nieuwe instantie van News aanmaken.
 
@@ -61,11 +69,16 @@ class NewsController extends Controller
      */
     public function update(Request $request, News $news) // Bij aanroepen functie: valideer gegevens en update het newsitem als alles oké is.
     {
-        $validated= $request->validate([
+        $validated = $request->validate([
             'title' => 'required',
             'content' => 'required',
             'published_at' => 'required|date',
+            'image' => 'nullable|image|max:2048',
         ]);
+
+        if ($request->hasFile('image')) {
+            $validated['image'] = $request->file('image')->store('news', 'public');
+        }
 
         $news->update($validated);
 

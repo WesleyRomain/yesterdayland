@@ -18,6 +18,6 @@
     </div>
 
     <a href="{{ route('news.index') }}" class="back-link">
-        <- Terug naar overzicht;
+        <- Terug naar overzicht
     </a>
 @endsection

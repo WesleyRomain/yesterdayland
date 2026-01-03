@@ -129,3 +129,65 @@ button {
     border-radius: 6px;
     margin-bottom: 10px;
 }
+
+.btn {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration:none;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.btn-admin { /* Dit erft niet automatisch van .btn want het is een link... Dus manueel aanpassen*/
+    background: palegreen;
+    color: white;
+    margin-right: 20px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.btn-admin:hover {
+    background:darkgreen;
+}
+
+.btn-edit { /* Dit erft niet automatisch van .btn want het is een link... Dus manueel aanpassen*/
+    background: steelblue;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.btn-edit:hover {
+    background: darkblue;
+}
+
+.btn-delete {
+    background: palevioletred;
+    color: white;
+    border: none;
+
+}
+
+.btn-delete:hover {
+    background: darkred;
+}
+
+.admin-buttons {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+
+}

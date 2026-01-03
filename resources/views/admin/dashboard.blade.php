@@ -14,8 +14,8 @@
 <p> Welkom {{auth()->user()->name}}</p>
 <p> Je bent succesvol ingelogd als admin. Wat wil je doen?</p>
 
-<a href="{{route('admin.users.index')}}">Beheer gebruikers</a><br> {{--!Verbindt door naar route admin.users.index--}}
-<a href="#">Nieuws beheren</a><br>
+<a href="{{ route('admin.users.index') }}">Beheer gebruikers</a><br> {{--Verbindt door naar route admin.users.index--}}
+<a href="{{ route('news.index')}}">Nieuws beheren </a><br> {{--Verbindt door naar route news.index--}}
 <a href="#">FAQ beheren</a><br>
 <a href="#">Contactberichten</a><br>
 </body>
