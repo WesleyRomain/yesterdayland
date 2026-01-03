@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FaqCategory;
+use App\Models\FaqQuestion;
 use Illuminate\Http\Request;
 
 class AdminFaqQuestionController extends Controller
@@ -11,7 +13,8 @@ class AdminFaqQuestionController extends Controller
      */
     public function index()
     {
-        //
+        $questions = FaqQuestion::with('categories')->get();
+        return view('admin.faq.questions.index', compact('questions'));
     }
 
     /**
@@ -19,7 +22,8 @@ class AdminFaqQuestionController extends Controller
      */
     public function create()
     {
-        //
+        $categories = FaqCategory::all();
+        return view('admin.faq.questions.create', compact('categories'));
     }
 
     /**
@@ -27,38 +31,69 @@ class AdminFaqQuestionController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $validated =$request->validate([
+            'question' => 'required|min:3|max:255',
+            'answer' => 'required|min:3',
+            'categories' => 'required|array',
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
+        $question= FaqQuestion::create([
+            'question' => $validated['question'],
+            'answer' => $validated['answer'],
+        ]);
+
+        // Many-to-many koppeling
+        $question->categories()->sync($validated['categories']);
+
+        return redirect()
+            ->route('admin.faq-questions.index')
+            ->with('success', 'Faq vraag succesvol toegevoegd');
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(FaqQuestion $faq_question)
     {
-        //
+        $categories = FaqCategory::all();
+        $selected=$faq_question->categories->pluck('id')->toArray();
+
+        return view('admin.faq.questions.edit', compact('faq_question', 'categories', 'selected'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, FaqQuestion $faq_question)
     {
-        //
+        $validated =$request->validate([
+            'question' => 'required|min:3|max:255',
+            'answer' => 'required|min:3',
+            'categories' => 'required|array',
+        ]);
+
+        $faq_question->update([
+            'question' => $validated['question'],
+            'answer' => $validated['answer'],
+        ]);
+
+        // Many to-many koppeling updaten
+        $faq_question->categories()->sync($validated['categories']);
+        return redirect()
+            ->route('admin.faq-questions.index')
+            ->with('success', 'Faq vraag succesvol bijgewerkt');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(FaqQuestion $faq_question)
     {
-        //
+        $faq_question->categories()->detach();
+        $faq_question->delete();
+
+        return redirect()
+            ->route('admin.faq-questions.index')
+            ->with('success', 'Faq vraag succesvol verwijderd');
     }
 }
