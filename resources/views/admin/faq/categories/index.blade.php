@@ -32,8 +32,15 @@
                     </form>
                 </div>
             </li>
-
         @endforeach
     </ul>
+
+    <a href="{{ route('admin.faq-categories.create') }}" class="btn btn-admin">
+        Nieuwe categorie aanmaken
+    </a>
+
+    <a href="{{ route('faq.index') }}" class="btn ">
+        Terug naar overzicht
+    </a>
 @endsection
 

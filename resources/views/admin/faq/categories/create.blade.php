@@ -11,4 +11,8 @@
         <button type="submit" class="btn btn-edit">Categorie aanmaken</button>
 
     </form>
+
+    <a href="{{ route('admin.faq-categories.index') }}" class="btn">
+        Terug naar categorieën
+    </a>
 @endsection

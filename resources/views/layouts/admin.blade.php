@@ -16,7 +16,7 @@
 
         <a href=" {{ route('admin.users.index') }}">Gebruiksbeheer</a>
         <a href=" {{ route('news.index') }} ">Nieuwsbeheer</a>
-        <a href="#">FAQ</a>
+        <a href=" {{ route('faq.index') }}">FAQ</a>
         <a href="#">Contact</a>
     </div>
 

@@ -17,7 +17,10 @@
     <label for="published_at">Datum van publicatie: </label>
     <input type="date" id="published_at" name="published_at"><br>
 
-    <button type="submit" class="btn btn-edit">Nieuws opslaan</button>
+    <button type="submit" class="btn btn-edit">Nieuws opslaan</button><br>
 </form>
+    <a href="{{ route('news.index') }} " class="btn">
+        Terug naar overzicht nieuwsfeiten
+    </a>
 @endsection
 

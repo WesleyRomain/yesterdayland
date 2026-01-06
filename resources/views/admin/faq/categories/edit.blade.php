@@ -9,6 +9,9 @@
         <label for="name">Naam van de categorie: </label>
         <input type="text" id="name" name="name" value="{{ old('name') }}">
 
-        <button type="submit" class="btn btn-edit">Categorie bijwerken</button>
+        <button type="submit" class="btn btn-edit">Categorie bijwerken</button><br>
     </form>
+    <a href="{{ route('admin.faq-categories.index') }}" class="btn">
+        Terug naar categorieën
+    </a>
 @endsection
