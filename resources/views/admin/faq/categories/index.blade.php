@@ -22,7 +22,7 @@
                         Bewerken
                     </a>
 
-                    <form action="{{ route('admin.faq-categories.destroy', $category) }}" method="POST">
+                    <form action="{{ route('admin.faq-categories.destroy', $category) }}" method="POST" class="inline-form">
                         @csrf
                         @method('DELETE')
 

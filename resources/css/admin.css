@@ -74,7 +74,7 @@ body {
 
 
 .btn-edit {
-    background: steelblue;
+    background: #4a90e2;
     color: white;
 }
 
@@ -83,7 +83,7 @@ body {
 }
 
 .btn-delete {
-    background: palevioletred;
+    background: #e74c3c;
     color: white;
 }
 
@@ -92,7 +92,7 @@ body {
 }
 
 .btn-admin{
-    background: palegreen;
+    background: #27ae60;
     color: white;
 }
 
@@ -189,5 +189,17 @@ form .btn {
     padding: 0 !important;
     background: none !important;
     border: none !important;
+}
+
+.inline-form {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: none !important;
+    border: none !important;
+    display: inline;
+}
+
+.inline-form button {
+    margin-top: 0 !important;
 }
 

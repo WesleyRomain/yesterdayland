@@ -23,7 +23,7 @@
                         Bewerken
                     </a>
 
-                    <form action="{{ route('admin.faq-questions.destroy', $question) }}" method="POST">
+                    <form action="{{ route('admin.faq-questions.destroy', $question) }}" method="POST" class="inline-form">
                         @csrf
                         @method('DELETE')
 
@@ -38,7 +38,7 @@
 
     <a href="{{ route ('admin.faq-questions.create') }}" class="btn btn-admin">
         Nieuwe vraag aanmaken
-    </a>
+    </a><br>
 
     <a href="{{ route('faq.index') }}" class="btn ">
         Terug naar overzicht

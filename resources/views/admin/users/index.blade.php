@@ -18,7 +18,7 @@
                 {{$user->name}} ({{$user->email}})
                 <div class="user-actions">
                     <a href="{{route('admin.users.edit', $user)}}" class="btn btn-edit">Bewerken</a>
-                    <form action="{{route('admin.users.destroy', $user)}}" method="POST">
+                    <form action="{{route('admin.users.destroy', $user)}}" method="POST" class="inline-form">
                         @csrf {{--Beveiliging met unieke token--}}
                         @method('DELETE') {{--Methode = delete--}}
                         <button type="submit" class="btn btn-delete">Verwijderen

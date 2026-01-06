@@ -9,7 +9,7 @@ body {
 }
 
 .navbar {
-    background: palevioletred;
+    background: #2c3e50;
     padding: 12px;
 }
 
@@ -36,14 +36,14 @@ body {
 h1 {
     font-weight: bolder;
     font-size: 40px;
-    color: steelblue;
+    color: #34495e;
     margin: 30px;
 }
 
 h2 {
     font-weight:bold;
     font-size: medium;
-    color: steelblue;
+    color: #34495e;
     margin: 30px;
 }
 
@@ -72,7 +72,7 @@ textarea {
 
 button {
     padding: 10px;
-    background: cornflowerblue;
+    background: #4a90e2;
     color: white;
     border: none;
     border-radius: 5px;
@@ -141,7 +141,7 @@ button {
 }
 
 .btn-admin { /* Dit erft niet automatisch van .btn want het is een link... Dus manueel aanpassen*/
-    background: palegreen;
+    background: #27ae60;
     color: white;
     margin-right: 20px;
     padding: 8px 14px;
@@ -175,7 +175,7 @@ button {
 }
 
 .btn-delete {
-    background: palevioletred;
+    background: 	#e74c3c;
     color: white;
     border: none;
 
