@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\AdminFaqCategoryController;
 use App\Http\Controllers\AdminFaqQuestionController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
@@ -26,6 +27,10 @@ Route::get('/news/{news}', [NewsController::class, 'show'])->name('news.show'); 
 
 //Publieke route voor FAQ
 Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
+
+//Publieke routes voor contactformulier tonen en versturen
+Route::get('/contact', [ContactController::class, 'show'])->name('contact.show'); //GET = pagina ophalen, route krijgt naam 'contact.show' om makkelijk in links te gebruiken.
+Route::post('/contact',[ContactController::class, 'send'])->name('contact.send'); //POST = data versturen, route krijgt naam 'contact.send' voor het form action attribuut
 
 //Ingelogde gebruikers (profiel bewerken)
 Route::middleware('auth')->group(function () {

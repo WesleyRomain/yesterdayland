@@ -17,13 +17,13 @@
         <a href=" {{ route('admin.users.index') }}">Gebruiksbeheer</a>
         <a href=" {{ route('news.index') }} ">Nieuwsbeheer</a>
         <a href=" {{ route('faq.index') }}">FAQ</a>
-        <a href="#">Contact</a>
+        <a href=" {{ route ('contact.show')  }}">Contact</a>
     </div>
 
     <div class="admin-nav-right">
         <span class="admin-user">Ingelogd als: {{ auth()->user()->name }}</span>
 
-        <form action=" {{ route('logout') }}" method="POST" style="display:inline;">
+        <form action=" {{ route('logout') }}" method="POST" class="logout_form "style="display:inline;">
             @csrf
             <button class="logout-link">Uitloggen</button>
         </form>

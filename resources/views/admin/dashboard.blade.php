@@ -14,6 +14,6 @@
         <a href="{{ route('news.index')}}" class="btn btn-edit">Nieuws
             beheren </a> {{--Verbindt door naar route news.index--}}
         <a href="{{ route('faq.index') }}" class="btn btn-edit">FAQ beheren</a>
-        <a href="#" class="btn btn-edit">Contactberichten</a>
+        <a href="{{ route('contact.show') }}" class="btn btn-edit">Contactberichten</a>
     </div>
 @endsection
