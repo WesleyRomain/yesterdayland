@@ -20,13 +20,21 @@
 
     {{-- FAQ inhoud --}}
     @foreach($categories as $category)
-        <h2>{{ $category->name }}</h2>
+        <div class="faq-category">
+            <h2>{{ $category->name }}</h2>
 
-        @foreach($category->questions as $question)
-            <details style="margin-bottom: 10px;">
-                <summary>{{ $question->question }}</summary>
-                <p>{{ $question->answer }}</p>
-            </details>
-        @endforeach
+            <div class="faq-list">
+                @foreach($category->questions as $question)
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            {{ $question->question }}
+                        </summary>
+                        <p class="faq-answer">
+                            {{ $question->answer }}
+                        </p>
+                    </details>
+                @endforeach
+            </div>
+        </div>
     @endforeach
 @endsection

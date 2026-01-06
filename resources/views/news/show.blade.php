@@ -6,7 +6,7 @@
     <h1>{{ $news->title }}</h1>
 
     @if($news->image)
-        <img src="{{ asset('storage/' . $news->image) }}" alt="Nieuws afbeelding">
+        <img src="{{ asset('storage/' . $news->image) }}" alt="Nieuws afbeelding" class="news-detail-image">
     @endif
 
     <p class="date">
@@ -18,6 +18,6 @@
     </div><br>
 
     <a href="{{ route('news.index') }}" class="back-link">
-        <- Terug naar overzicht
+        ⮜ Terug naar overzicht
     </a>
 @endsection

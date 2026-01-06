@@ -46,7 +46,7 @@
                 </p>
 
                 <a href="{{route('news.show', $new) }}" class="read-more"> {{--Redirecten naar de detailpagina.--}}
-                    Lees meer ->
+                    Lees meer ⮞
                 </a>
 
                 @auth  {{--Als iemand admin is= voeg dan volgende knoppen toe. Niet apart nog een admin view maken = dubbel werk!--}}
