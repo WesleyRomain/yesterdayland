@@ -15,7 +15,7 @@
 
     <div class="news-content">
         {!! nl2br(e($news->content)) !!}
-    </div>
+    </div><br>
 
     <a href="{{ route('news.index') }}" class="back-link">
         <- Terug naar overzicht
