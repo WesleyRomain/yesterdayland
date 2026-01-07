@@ -13,24 +13,24 @@ Dit in het kader van de opdracht "Laravel", Backend Web (Bachelor TI - 2e jaar).
 - Node.js + NPM
 
 ### Stappen
-1) Project clonen
+1. Project clonen
 git clone <github-url>
-2) Composer install (voor Carbon, Eloquent, routing, Blade, Hashing, enz.)
+2. Composer install (voor Carbon, Eloquent, routing, Blade, Hashing, enz.)
 Composer dependencies installeren
-3) Node dependencies installeren (voor CSS, JS en Vite)
+3. Node dependencies installeren (voor CSS, JS en Vite)
 npm install
-4) .env (lokale variabelen) aanmaken
+4. env (lokale variabelen) aanmaken
 cp .env.example .env
-5) Applicatiesleutel genereren
+5. Applicatiesleutel genereren
 php artisan key:generate
-6) In .env database instellen
-7) Storage koppelen
+6. In .env database instellen
+7. Storage koppelen
 php artisan storage:link
-9) Migraties + seeders uitvoeren
+8. Migraties + seeders uitvoeren
 php artisan migrate:fresh --seed
-10) npm run dev
+9. npm run dev
 Om Vite + CSS te laten werken
-11) Starten project
+10. Starten project
 php artisan serve
 
 # Functionaliteiten
