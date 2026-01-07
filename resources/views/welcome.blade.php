@@ -5,6 +5,12 @@
 @section('content')
     <h1>Welkom bij Yesterdayland!</h1>
 
+    @if(session('success'))
+        <div class="alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
     <h2>Alle bewoners</h2>
     <div class="profile-grid">
         @foreach($users as $user)
@@ -13,6 +19,12 @@
                 <p>{{ $user->name }}</p>
             </a>
         @endforeach
+    </div>
+
+    <h2>Tickets</h2>
+    <div class="ticket-box">
+        <p>Yesterdayland 2026</p>
+        <a href="{{ route('tickets.order') }}" class="ticket-button">Bestel hier je tickets</a>
     </div>
 
 @endsection
