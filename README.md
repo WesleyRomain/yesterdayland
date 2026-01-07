@@ -13,25 +13,39 @@ Dit in het kader van de opdracht "Laravel", Backend Web (Bachelor TI - 2e jaar).
 - Node.js + NPM
 
 ### Stappen
-1. Project clonen
-git clone <github-url>
-2. Composer install (voor Carbon, Eloquent, routing, Blade, Hashing, enz.)
-Composer dependencies installeren
-3. Node dependencies installeren (voor CSS, JS en Vite)
-npm install
-4. env (lokale variabelen) aanmaken
-cp .env.example .env
-5. Applicatiesleutel genereren
-php artisan key:generate
-6. In .env database instellen
-7. Storage koppelen
-php artisan storage:link
-8. Migraties + seeders uitvoeren
-php artisan migrate:fresh --seed
-9. npm run dev
-Om Vite + CSS te laten werken
-10. Starten project
-php artisan serve
+
+1. Project clonen  
+   git clone <github-url>  
+   cd yesterdayland
+
+2. Composer dependencies installeren  
+   composer install
+
+3. Node dependencies installeren  
+   npm install
+
+4. .env-bestand aanmaken  
+   cp .env.example .env
+
+5. Applicatiesleutel genereren  
+   php artisan key:generate
+
+6. Database instellen in `.env`  
+   DB_DATABASE=yesterdayland  
+   DB_USERNAME=root  
+   DB_PASSWORD=
+
+7. Storage koppelen  
+   php artisan storage:link
+
+8. Migraties en seeders uitvoeren  
+   php artisan migrate:fresh --seed
+
+9. Vite starten (voor CSS en JS)  
+   npm run dev
+
+10. Project starten  
+    php artisan serve
 
 # Functionaliteiten
 
@@ -60,5 +74,36 @@ php artisan serve
 - Verzoeken komen in het logbestand terecht (Men kan ook een mailserver instellen, indien gewenst).
 
 
+## Bronvermeldingen (APA-stijl)
 
+Aertssens, T. (2023). *Web Essentials* [Cursus]. Erasmushogeschool Brussel.
 
+Blade Templates – Laravel 11.x. (2026). *Laravel documentation*. Geraadpleegd op 2 januari 2026, in Bierbeek, via https://laravel.com/docs/11.x/blade
+
+De Boeck, W. (2024). *Web Advanced* [Cursus]. Erasmushogeschool Brussel.
+
+Heyman, B. (2025–2026). *Backend Web* [Cursus]. Erasmushogeschool Brussel.
+
+Laravel Daily. (2026). *Admin User, Route Groups, Middleware*. Geraadpleegd op 27 december 2025, om 17:00 in Bierbeek, via https://laraveldaily.com/
+
+Laravel. (2026). *Laravel documentation*. Geraadpleegd op https://laravel.com/docs
+
+MDN Web Docs. (2026). *CSS reference*. Geraadpleegd op https://developer.mozilla.org/
+
+Microsoft. (2026). *Microsoft Copilot – General development assistance*. Geraadpleegd via https://copilot.microsoft.com/
+
+Nesbot, B. (2026). *Carbon PHP API documentation*. Geraadpleegd op https://carbon.nesbot.com/docs/
+
+OpenAI. (2026). *ChatGPT – General programming assistance*. Geraadpleegd op https://chat.openai.com/
+
+PHP Group. (2026). *PHP manual*. Geraadpleegd op https://www.php.net/docs.php
+
+Sling Academy. (2026). *Eloquent: Define model with optional/nullable fields*. Geraadpleegd op 29 december 2025, via https://www.slingacademy.com/
+
+Sling Academy. (2026). *Laravel Eloquent: How to add UNIQUE constraint*. Geraadpleegd op 29 december 2025, om 18:30, via https://www.slingacademy.com/
+
+Stack Overflow. (2026). *Stack Overflow – Developer Q&A*. Geraadpleegd op https://stackoverflow.com
+
+Tailwind Labs. (2026). *Tailwind CSS documentation*. Geraadpleegd op https://tailwindcss.com/docs
+
+Unicode Consortium. (2026). *Unicode character reference*. Geraadpleegd op https://unicode.org/
