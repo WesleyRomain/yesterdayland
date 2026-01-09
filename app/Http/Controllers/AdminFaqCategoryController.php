@@ -36,7 +36,7 @@ class AdminFaqCategoryController extends Controller
         FaqCategory::create($validated);
         return redirect()
             ->route('admin.faq-categories.index')
-            ->with('success', 'Faq categorie succesvol toegevoegd');
+            ->with('success', 'FAQ-categorie succesvol toegevoegd');
     }
 
     /**
@@ -60,7 +60,7 @@ class AdminFaqCategoryController extends Controller
 
         return redirect()
             ->route('admin.faq-categories.index')
-            ->with('success', 'Faq categorie succesvol aangepast');
+            ->with('success', 'FAQ-categorie succesvol gewijzigd');
     }
 
     /**
@@ -72,6 +72,6 @@ class AdminFaqCategoryController extends Controller
 
         return redirect()
             ->route('admin.faq-categories.index')
-            ->with('success', 'Faq categorie succesvol verwijderd');
+            ->with('success', 'FAQ-categorie succesvol verwijderd');
     }
 }

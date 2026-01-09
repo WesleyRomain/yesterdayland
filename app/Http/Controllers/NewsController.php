@@ -45,7 +45,9 @@ class NewsController extends Controller
 
         News::create($validated); // Een nieuwe instantie van News aanmaken.
 
-        return redirect()->route('news.index'); // Stuur terug door naar de beginpagina.
+        return redirect()
+            ->route('news.index') // Stuur terug door naar de beginpagina.
+            ->with('success', 'Nieuwsitem succesvol toegevoegd');
     }
 
     /**
@@ -82,8 +84,9 @@ class NewsController extends Controller
 
         $news->update($validated);
 
-        return redirect()->route('news.index');
-
+        return redirect()
+            ->route('news.index')
+            ->with('success', 'Nieuwsitem succesvol gewijzigd');
     }
 
     /**
@@ -93,6 +96,8 @@ class NewsController extends Controller
     {
         $news->delete();
 
-        return redirect()->route('admin.news.index');
+        return redirect()
+            ->route('admin.news.index')
+            ->with('success', 'Nieuwsitem succesvol verwijderd');
     }
 }

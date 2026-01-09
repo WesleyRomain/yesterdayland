@@ -5,13 +5,7 @@
 @section('content')
     <h1>FAQ-Categorieën</h1>
 
-    @if(session('success'))
-        <div style="color:green;">{{ session('success') }}</div>
-    @endif
-
-    @if(session('error'))
-        <div style="color:red;">{{ session('error') }}</div>
-    @endif
+    <x-alert />
 
     <ul>
         @foreach($categories as $category)

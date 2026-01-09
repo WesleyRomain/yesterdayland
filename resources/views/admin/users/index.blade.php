@@ -5,13 +5,8 @@
 @section('content')
     <h1>Gebruiksbeheer</h1>
 
-    @if(session('success'))
-        <div style="color:green;">{{session('success')}}</div>
-    @endif
+    <x-alert />
 
-    @if(session('error'))
-        <div style="color:red;">{{session('error')}}</div>
-    @endif
     <ul>
         @foreach($users as $user)
             <li>

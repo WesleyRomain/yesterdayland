@@ -5,15 +5,7 @@
 @section('content')
     <h1>Nieuws van Yesterdayland</h1>
 
-    @if($errors->any())
-        <div style="color:red;">
-            <ul>
-                @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+   <x-alert />
 
     {{--Indien iemand admin is: voeg een link toe om een nieuw nieuwselement toe te voegen.--}}
     @auth

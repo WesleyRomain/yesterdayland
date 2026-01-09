@@ -47,7 +47,7 @@ class AdminFaqQuestionController extends Controller
 
         return redirect()
             ->route('admin.faq-questions.index')
-            ->with('success', 'Faq vraag succesvol toegevoegd');
+            ->with('success', 'FAQ-vraag succesvol toegevoegd');
     }
 
     /**
@@ -81,7 +81,7 @@ class AdminFaqQuestionController extends Controller
         $faq_question->categories()->sync($validated['categories']);
         return redirect()
             ->route('admin.faq-questions.index')
-            ->with('success', 'Faq vraag succesvol bijgewerkt');
+            ->with('success', 'FAQ-vraag succesvol gewijzigd');
     }
 
     /**
@@ -94,6 +94,6 @@ class AdminFaqQuestionController extends Controller
 
         return redirect()
             ->route('admin.faq-questions.index')
-            ->with('success', 'Faq vraag succesvol verwijderd');
+            ->with('success', 'FAQ-vraag succesvol verwijderd');
     }
 }
