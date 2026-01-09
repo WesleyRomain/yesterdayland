@@ -91,7 +91,7 @@ De tools zijn ingezet voor:
 - Hulp bij het begrijpen en toepassen van Laravel- en PHP-concepten
 - Het oplossen van syntax- en logische fouten
 
-Alle door AI gegenereerde code is door de auteur (Wesley Romain) kritisch geëvalueerd, aangepast en geïntegreerd in het project.
+Alle door AI gegenereerde hulp is door de auteur (Wesley Romain) kritisch geëvalueerd, aangepast en geïntegreerd in het project.
 De uiteindelijke architectuur, basislogica, validaties en functionaliteiten zijn zelfstandig uitgewerkt.
 De auteur kan de volledige code toelichten en verantwoorden.
 
