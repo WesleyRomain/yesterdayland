@@ -82,6 +82,19 @@ Dit in het kader van de opdracht "Laravel", Backend Web (Bachelor TI - 2e jaar).
 ### Seeders
 - Default seeders toegevoegd: Start ticketverkoop, Yori de Tijdrotter (bewoner), FAQ's (categorieën + vragen)
 
+## Extra hulpmiddelen - gebruik van AI
+
+Bij de ontwikkeling van dit project is gebruikgemaakt van AI-tools als ondersteunen hulpmiddel, met name ChatGPT (OpenAI) en Microsoft Copilot.
+
+De tools zijn ingezet voor:
+- Het genereren van basisstructuren voor Laravel-controllers, models en views (om de auteur op weg te helpen, geenszins volledige aannames)
+- Hulp bij het begrijpen en toepassen van Laravel- en PHP-concepten
+- Het oplossen van syntax- en logische fouten
+
+Alle door AI gegenereerde code is door de auteur (Wesley Romain) kritisch geëvalueerd, aangepast en geïntegreerd in het project.
+De uiteindelijke architectuur, basislogica, validaties en functionaliteiten zijn zelfstandig uitgewerkt.
+De auteur kan de volledige code toelichten en verantwoorden.
+
 
 ## Bronvermeldingen (APA-stijl)
 
@@ -103,7 +116,7 @@ Microsoft. (2026). *Microsoft Copilot – General development assistance*. Geraa
 
 Nesbot, B. (2026). *Carbon PHP API documentation*. Geraadpleegd op https://carbon.nesbot.com/docs/
 
-OpenAI. (2026). *ChatGPT – General programming assistance + generation Yori and Ticketsale banner *. Geraadpleegd op https://chat.openai.com/
+OpenAI. (2026). *ChatGPT – General programming assistance*. Geraadpleegd op https://chat.openai.com/
 
 PHP Group. (2026). *PHP manual*. Geraadpleegd op https://www.php.net/docs.php
 
