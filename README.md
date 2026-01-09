@@ -84,7 +84,7 @@ Dit in het kader van de opdracht "Laravel", Backend Web (Bachelor TI - 2e jaar).
 
 ## Extra hulpmiddelen - gebruik van AI
 
-Bij de ontwikkeling van dit project is gebruikgemaakt van AI-tools als ondersteunen hulpmiddel, met name ChatGPT (OpenAI) en Microsoft Copilot.
+Bij de ontwikkeling van dit project is gebruikgemaakt van AI-tools als ondersteunend hulpmiddel, met name ChatGPT (OpenAI) en Microsoft Copilot.
 
 De tools zijn ingezet voor:
 - Het genereren van basisstructuren voor Laravel-controllers, models en views (om de auteur op weg te helpen, geenszins volledige aannames)
