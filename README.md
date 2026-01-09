@@ -73,6 +73,15 @@ Dit in het kader van de opdracht "Laravel", Backend Web (Bachelor TI - 2e jaar).
 - Eenvoudig contactformulier om vragen te stellen.
 - Verzoeken komen in het logbestand terecht (Men kan ook een mailserver instellen, indien gewenst).
 
+# Extra functionaliteiten
+
+### Admin
+- Admins krijgen een tabel van de bestellingen die gemaakt zijn
+- Boodschappen volgens een component bij toevoegen, verwijderen en aanmaken nieuwe items (volgens een component)
+
+### Seeders
+- Default seeders toegevoegd: Start ticketverkoop, Yori de Tijdrotter (bewoner), FAQ's (categorieën + vragen)
+
 
 ## Bronvermeldingen (APA-stijl)
 
@@ -94,7 +103,7 @@ Microsoft. (2026). *Microsoft Copilot – General development assistance*. Geraa
 
 Nesbot, B. (2026). *Carbon PHP API documentation*. Geraadpleegd op https://carbon.nesbot.com/docs/
 
-OpenAI. (2026). *ChatGPT – General programming assistance*. Geraadpleegd op https://chat.openai.com/
+OpenAI. (2026). *ChatGPT – General programming assistance + generation Yori and Ticketsale banner *. Geraadpleegd op https://chat.openai.com/
 
 PHP Group. (2026). *PHP manual*. Geraadpleegd op https://www.php.net/docs.php
 
