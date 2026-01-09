@@ -32,7 +32,7 @@ Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
 
 //Publieke routes voor contactformulier tonen en versturen
 Route::get('/contact', [ContactController::class, 'show'])->name('contact.show'); //GET = pagina ophalen, route krijgt naam 'contact.show' om makkelijk in links te gebruiken.
-Route::post('/contact',[ContactController::class, 'send'])->name('contact.send'); //POST = data versturen, route krijgt naam 'contact.send' voor het form action attribuut
+Route::post('/contact', [ContactController::class, 'send'])->name('contact.send'); //POST = data versturen, route krijgt naam 'contact.send' voor het form action attribuut
 
 Route::get('/tickets', function () {
     return view('tickets.order');

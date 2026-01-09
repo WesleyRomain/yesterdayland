@@ -3,22 +3,23 @@
 @section('title', 'Nieuwsitem aanmaken')
 
 @section('content')
-<form action="{{route('admin.news.store')}} " method="POST" enctype="multipart/form-data">
-    @csrf
-    <label for="title">Titel nieuwsitem: </label>
-    <input type="text" id="title" name="title"><br>
+    <form action="{{route('admin.news.store')}} " method="POST" enctype="multipart/form-data">
+        @csrf
+        <label for="title">Titel nieuwsitem: </label>
+        <input type="text" id="title" name="title"><br>
 
-    <label for="image">Afbeelding bij nieuwsartikel: </label>
-    <input type="file" id="image" name="image"><br>
+        <label for="image">Afbeelding bij nieuwsartikel: </label>
+        <input type="file" id="image" name="image"><br>
 
-    <label for="content">Inhoud van het nieuwsfeit: </label>
-    <textarea name="content" id="content" ></textarea><br>
+        <label for="content">Inhoud van het nieuwsfeit: </label>
+        <textarea name="content" id="content"></textarea><br>
 
-    <label for="published_at">Datum van publicatie: </label>
-    <input type="date" id="published_at" name="published_at"><br>
+        <label for="published_at">Datum van publicatie: </label>
+        <input type="date" id="published_at" name="published_at"><br>
 
-    <button type="submit" class="btn btn-edit">Nieuws opslaan</button><br>
-</form>
+        <button type="submit" class="btn btn-edit">Nieuws opslaan</button>
+        <br>
+    </form>
     <a href="{{ route('news.index') }} " class="btn">
         Terug naar overzicht nieuwsfeiten
     </a>

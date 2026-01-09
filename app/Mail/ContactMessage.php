@@ -12,6 +12,7 @@ use Illuminate\Queue\SerializesModels;
 class ContactMessage extends Mailable
 {
     use Queueable, SerializesModels;
+
     public $data; // Publieke property om data aan de view door te geven
 
     /*

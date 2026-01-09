@@ -5,7 +5,7 @@
 @section('content')
     <h1>FAQ-Categorieën</h1>
 
-    <x-alert />
+    <x-alert/>
 
     <ul>
         @foreach($categories as $category)
@@ -16,7 +16,8 @@
                         Bewerken
                     </a>
 
-                    <form action="{{ route('admin.faq-categories.destroy', $category) }}" method="POST" class="inline-form">
+                    <form action="{{ route('admin.faq-categories.destroy', $category) }}" method="POST"
+                          class="inline-form">
                         @csrf
                         @method('DELETE')
 

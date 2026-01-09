@@ -5,7 +5,7 @@
 @section('content')
     <h1>FAQ-vragen</h1>
 
-   <x-alert />
+    <x-alert/>
 
     <ul>
         @foreach($questions as $question)
@@ -17,7 +17,8 @@
                         Bewerken
                     </a>
 
-                    <form action="{{ route('admin.faq-questions.destroy', $question) }}" method="POST" class="inline-form">
+                    <form action="{{ route('admin.faq-questions.destroy', $question) }}" method="POST"
+                          class="inline-form">
                         @csrf
                         @method('DELETE')
 

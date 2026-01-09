@@ -31,13 +31,13 @@ class AdminFaqQuestionController extends Controller
      */
     public function store(Request $request)
     {
-        $validated =$request->validate([
+        $validated = $request->validate([
             'question' => 'required|min:3|max:255',
             'answer' => 'required|min:3',
             'categories' => 'required|array',
         ]);
 
-        $question= FaqQuestion::create([
+        $question = FaqQuestion::create([
             'question' => $validated['question'],
             'answer' => $validated['answer'],
         ]);
@@ -56,7 +56,7 @@ class AdminFaqQuestionController extends Controller
     public function edit(FaqQuestion $faq_question)
     {
         $categories = FaqCategory::all();
-        $selected=$faq_question->categories->pluck('id')->toArray();
+        $selected = $faq_question->categories->pluck('id')->toArray();
 
         return view('admin.faq.questions.edit', compact('faq_question', 'categories', 'selected'));
     }
@@ -66,7 +66,7 @@ class AdminFaqQuestionController extends Controller
      */
     public function update(Request $request, FaqQuestion $faq_question)
     {
-        $validated =$request->validate([
+        $validated = $request->validate([
             'question' => 'required|min:3|max:255',
             'answer' => 'required|min:3',
             'categories' => 'required|array',

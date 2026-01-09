@@ -13,7 +13,8 @@ use Illuminate\View\View;
 class ProfileController extends Controller
 {
     //Toont publieke profielpagina.
-    public function show(User $user){
+    public function show(User $user)
+    {
         return view('profile.show', compact('user'));
     }
 
@@ -38,16 +39,16 @@ class ProfileController extends Controller
 
         ]);
 
-        $user= $request->user(); //Ophalen van de ingelogde gebruiker.
+        $user = $request->user(); //Ophalen van de ingelogde gebruiker.
 
-        $user->username=$request->username; //Nieuwe waarden in user-model steken.
-        $user->birthday=$request->birthday;
-        $user->about_me=$request->about_me;
+        $user->username = $request->username; //Nieuwe waarden in user-model steken.
+        $user->birthday = $request->birthday;
+        $user->about_me = $request->about_me;
 
         //Eventuele profielfoto toevoegen.
-        if($request->hasFile('profile_picture')){
-            $path=$request->file('profile_picture')->store('profile_pictures','public');
-            $user->profile_picture=$path;
+        if ($request->hasFile('profile_picture')) {
+            $path = $request->file('profile_picture')->store('profile_pictures', 'public');
+            $user->profile_picture = $path;
         }
 
         $user->save(); //Gebruiker opslaan in de database.

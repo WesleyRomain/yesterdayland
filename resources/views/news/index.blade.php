@@ -5,7 +5,7 @@
 @section('content')
     <h1>Nieuws van Yesterdayland</h1>
 
-   <x-alert />
+    <x-alert/>
 
     {{--Indien iemand admin is: voeg een link toe om een nieuw nieuwselement toe te voegen.--}}
     @auth
@@ -41,7 +41,8 @@
                     Lees meer ⮞
                 </a>
 
-                @auth  {{--Als iemand admin is= voeg dan volgende knoppen toe. Niet apart nog een admin view maken = dubbel werk!--}}
+                @auth
+                    {{--Als iemand admin is= voeg dan volgende knoppen toe. Niet apart nog een admin view maken = dubbel werk!--}}
                     @if(auth()->user()->is_admin)
                         <div class="admin-buttons">
                             <a href=" {{ route('admin.news.edit', $new) }} " class="btn-edit">

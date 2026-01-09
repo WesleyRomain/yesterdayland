@@ -8,9 +8,10 @@ use PHPUnit\Framework\Attributes\Ticket;
 
 class TicketController extends Controller
 {
-    public function store(Request $request){
+    public function store(Request $request)
+    {
 
-        $validated =$request->validate([
+        $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email',
             'ticket_type' => 'required',

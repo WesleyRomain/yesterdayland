@@ -1,6 +1,6 @@
 /* Algemene stijl van de body */
 body {
-    margin:0;
+    margin: 0;
     font-family: Arial, sans-serif;
     background: #f0f0f0;
 }
@@ -23,7 +23,7 @@ body {
     font-weight: bold; /* Links hebben een bolde fond. */
 }
 
-.admin-navbar a:hover{
+.admin-navbar a:hover {
     text-decoration: underline;
 }
 
@@ -57,7 +57,7 @@ body {
     background: white;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Algemene stijl voor knoppen */
@@ -91,7 +91,7 @@ body {
     background: darkred;
 }
 
-.btn-admin{
+.btn-admin {
     background: #27ae60;
     color: white;
 }
@@ -109,7 +109,7 @@ body {
     margin-top: 20px;
 }
 
-.admin-links a{
+.admin-links a {
     width: fit-content;
     text-decoration: none;
     display: inline-block;
@@ -117,8 +117,8 @@ body {
 
 /* Zorg dat ALLE knoppen (ook <a>) dezelfde grootte krijgen */
 .btn {
-    display: inline-block;   /* maakt <a> knoppen even groot als <button> */
-    text-decoration: none;   /* geen onderlijning */
+    display: inline-block; /* maakt <a> knoppen even groot als <button> */
+    text-decoration: none; /* geen onderlijning */
 }
 
 .user-actions {
@@ -214,7 +214,7 @@ form .btn {
 }
 
 .admin-table thead {
-    background:#2c3e50;
+    background: #2c3e50;
     color: white;
 }
 

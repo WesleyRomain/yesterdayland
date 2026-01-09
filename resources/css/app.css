@@ -14,7 +14,7 @@ body {
 }
 
 .navbar a {
-    color:white;
+    color: white;
     margin-right: 15px;
     text-decoration: none;
     font-weight: bold;
@@ -30,7 +30,7 @@ body {
     background: white;
     padding: 25px;
     border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -41,14 +41,14 @@ h1 {
 }
 
 h2 {
-    font-weight:bold;
+    font-weight: bold;
     font-size: medium;
     color: #34495e;
     margin: 30px;
 }
 
 p {
-    margin:30px;
+    margin: 30px;
 }
 
 form {
@@ -111,7 +111,7 @@ button {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 25px;
-    margin-top:20px;
+    margin-top: 20px;
 }
 
 .news-item {
@@ -135,7 +135,7 @@ button {
     padding: 8px 14px;
     border-radius: 6px;
     font-weight: bold;
-    text-decoration:none;
+    text-decoration: none;
     cursor: pointer;
     transition: 0.2s ease-in-out;
 }
@@ -154,7 +154,7 @@ button {
 }
 
 .btn-admin:hover {
-    background:darkgreen;
+    background: darkgreen;
 }
 
 .btn-edit { /* Dit erft niet automatisch van .btn want het is een link... Dus manueel aanpassen*/
@@ -175,7 +175,7 @@ button {
 }
 
 .btn-delete {
-    background: 	#e74c3c;
+    background: #e74c3c;
     color: white;
     border: none;
 
@@ -237,12 +237,13 @@ button {
     margin-bottom: 20px;
     display: block;
 }
+
 .ticket-box {
     margin-top: 30px;
     padding: 20px;
     border-radius: 12px;
     background: linear-gradient(135deg, #ffe8f3, #e8f0ff);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     max-width: 350px;
     margin-left: auto;

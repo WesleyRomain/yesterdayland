@@ -10,7 +10,8 @@
     <p> Je bent succesvol ingelogd als admin. Wat wil je doen?</p>
 
     <div class="admin-links">
-        <a href="{{ route('admin.users.index') }}" class="btn btn-edit">Gebruikers beheren</a> {{--Verbindt door naar route admin.users.index--}}
+        <a href="{{ route('admin.users.index') }}" class="btn btn-edit">Gebruikers
+            beheren</a> {{--Verbindt door naar route admin.users.index--}}
         <a href="{{ route('news.index')}}" class="btn btn-edit">Nieuws
             beheren </a> {{--Verbindt door naar route news.index--}}
         <a href="{{ route('faq.index') }}" class="btn btn-edit">FAQ beheren</a>

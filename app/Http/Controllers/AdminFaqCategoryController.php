@@ -29,8 +29,8 @@ class AdminFaqCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $validated=$request->validate([
-            'name'=>'required|unique:faq_categories|min:2|max:255',
+        $validated = $request->validate([
+            'name' => 'required|unique:faq_categories|min:2|max:255',
         ]);
 
         FaqCategory::create($validated);
@@ -42,7 +42,7 @@ class AdminFaqCategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-        public function edit(FaqCategory $faq_category)
+    public function edit(FaqCategory $faq_category)
     {
         return view('admin.faq.categories.edit', compact('faq_category'));
     }
@@ -52,7 +52,7 @@ class AdminFaqCategoryController extends Controller
      */
     public function update(Request $request, FaqCategory $faq_category)
     {
-        $validated= $request->validate([
+        $validated = $request->validate([
             'name' => 'required|min:2|max:255|unique:faq_categories,name,' . $faq_category->id,
         ]);
 

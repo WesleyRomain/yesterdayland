@@ -24,7 +24,7 @@
     <div class="admin-nav-right">
         <span class="admin-user">Ingelogd als: {{ auth()->user()->name }}</span>
 
-        <form action=" {{ route('logout') }}" method="POST" class="logout_form "style="display:inline;">
+        <form action=" {{ route('logout') }}" method="POST" class="logout_form " style="display:inline;">
             @csrf
             <button class="logout-link">Uitloggen</button>
         </form>

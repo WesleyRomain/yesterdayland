@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class FaqQuestion extends Model
 {
-    protected $fillable=['question','answer'];
+    protected $fillable = ['question', 'answer'];
 
     public function categories()
     {
