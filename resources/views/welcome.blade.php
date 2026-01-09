@@ -23,7 +23,7 @@
 
     <h2>Tickets</h2>
     <div class="ticket-box">
-        <p>Yesterdayland 2026</p>
+        <h3 class="ticket-title">Yesterdayland 2026</h3>
         <a href="{{ route('tickets.order') }}" class="ticket-button">Bestel hier je tickets</a>
     </div>
 

@@ -3,7 +3,7 @@
 @section('title', 'Nieuwsitem bewerken')
 
 @section('content')
-    <form action={{ route('admin.news.update', $news) }} method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.news.update', $news) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <label for="title">Titel nieuwsitem: </label>
