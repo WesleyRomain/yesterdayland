@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\AdminFaqCategoryController;
 use App\Http\Controllers\AdminFaqQuestionController;
+use App\Http\Controllers\AdminTicketController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\NewsController;
@@ -64,6 +65,8 @@ Route::middleware(['auth', 'admin']) // Alleen ingelogde admins mogen deze funct
 
     // Gegroepeerde routes voor CRUD FAQ-questions
     Route::resource('faq-questions', AdminFaqQuestionController::class);
+
+    Route::get('/orders', [AdminTicketController::class, 'index'])->name('orders.index');
 });
 
 require __DIR__ . '/auth.php';

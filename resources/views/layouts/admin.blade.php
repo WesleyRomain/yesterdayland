@@ -18,6 +18,7 @@
         <a href=" {{ route('news.index') }} ">Nieuwsbeheer</a>
         <a href=" {{ route('faq.index') }}">FAQ</a>
         <a href=" {{ route ('contact.show')  }}">Contact</a>
+        <a href=" {{ route ('admin.orders.index') }}">Bestellingen</a>
     </div>
 
     <div class="admin-nav-right">
